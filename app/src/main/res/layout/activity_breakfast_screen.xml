@@ -23,28 +23,34 @@
         />
 
     <Button
-        android:id="@+id/my_button"
+        android:id="@+id/addfood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Food"
-        android:layout_below="@+id/entername"
+        android:layout_below="@+id/ingprompt"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter the ingredients in your food. Press Add Ingredient for each one."
+        android:text="Enter your food"
         android:id="@+id/ingprompt"
         android:layout_below="@+id/entername"
         android:layout_centerHorizontal="true" />
-
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/entering"
+        android:layout_below="@+id/addfood"
+        android:layout_centerHorizontal="true"
+        />
     <Button
-        android:id="@+id/my_button"
+        android:id="@+id/adding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Ingredient"
-        android:layout_below="@+id/entername"
+        android:layout_below="@+id/entering"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
