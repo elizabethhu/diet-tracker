@@ -6,12 +6,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.CalendarView.OnDateChangeListener;
 import android.widget.Toast;
 import android.app.Activity;
 
-public class MainActivity extends Activity {CalendarView calendar;
+public class MainActivity extends Activity implements View.OnClickListener {
+    CalendarView calendar;
+    Button mButton1;
 
 
     @Override
@@ -25,6 +29,12 @@ public class MainActivity extends Activity {CalendarView calendar;
 
         //initializes the calendarview
         initializeCalendar();
+        mButton1 = (Button) this.findViewById(R.id.button);
+        mButton1.setOnClickListener(this);
+
+    }
+    public void onClick (View v) {
+
     }
 
     public void initializeCalendar() {
