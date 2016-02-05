@@ -1,5 +1,6 @@
 package com.inspiringfemgineers.www.diettracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,6 +17,8 @@ import android.app.Activity;
 public class MainActivity extends Activity implements View.OnClickListener {
     CalendarView calendar;
     Button mButton1;
+    public final static String DATE_MESSAGE = "date";
+public String curDate;
 
 
     @Override
@@ -32,9 +35,27 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mButton1 = (Button) this.findViewById(R.id.button);
         mButton1.setOnClickListener(this);
 
-    }
-    public void onClick (View v) {
+        calendar.setOnDateChangeListener(new OnDateChangeListener() {
 
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month,
+                                            int dayOfMonth) {
+                int d = dayOfMonth;
+                int y = year;
+                int m = month;
+                curDate = m + "/" + d + "/" + y;
+            }
+    });
+
+    }
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, DayScreen.class);
+        intent.putExtra(DATE_MESSAGE, curDate);
+startActivity(intent);
+    }
+    public void onClick(View v) {
+sendMessage(v);
     }
 
     public void initializeCalendar() {

@@ -8,14 +8,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class DayScreen extends AppCompatActivity {
+
     private Day day;
     public final static String EXTRA_MESSAGE = "mealtype";
+    TextView dayfield;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_screen);
+        String message = intent.getStringExtra(MainActivity.DATE_MESSAGE);
+        dayfield = (TextView) this.findViewById(R.id.title);
+        dayfield.setText(message);
+
     }
     public void sendMessageBreakfast(View view) {
         Intent intent = new Intent(this, MealScreen.class);
