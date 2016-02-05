@@ -19,5 +19,9 @@ public class Food {
     public ArrayList<String> getIngredients() {
 return ingredients;
     }
+    public void addIngredients(String ing) {
+ingredients.add(ing);
+    }
+    }
     }
 

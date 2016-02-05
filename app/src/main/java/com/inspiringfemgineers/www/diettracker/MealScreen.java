@@ -1,5 +1,6 @@
 package com.inspiringfemgineers.www.diettracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,27 +9,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.util.ArrayList;
+public class MealScreen extends AppCompatActivity {
 
-public class BreakfastScreen extends AppCompatActivity {
-private Meal meal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_breakfast_screen);
-    }
-    public void addListener(){
-        final Button addfood = (Button) findViewById(R.id.addfood);
-        addfood.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText entername = (EditText) findViewById(R.id.entername);
-                String name = entername.getText().toString();
-                entername.setVisibility(v.GONE);
-                EditText displayname = (EditText) findViewById(R.id.displayname);
-                displayname.setText("Hello " + name + "!");
-            }
-        });
+        setContentView(R.layout.activity_meal_screen);
+        Intent intent = getIntent();
+        int message = intent.getIntExtra(DayScreen.EXTRA_MESSAGE, 0);
+        //message is which meal 0: breakfast,
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
