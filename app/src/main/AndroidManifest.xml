@@ -17,12 +17,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BreakfastScreen"
+            android:name=".MealScreen"
             android:label="@string/title_activity_breakfast_screen" >
         </activity>
         <activity
             android:name=".DayScreen"
             android:label="@string/title_activity_day_screen" >
+        </activity>
+        <activity
+            android:name=".FoodScreen"
+            android:label="@string/title_activity_food_screen" >
         </activity>
     </application>
 

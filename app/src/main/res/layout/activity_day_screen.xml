@@ -42,7 +42,8 @@
         android:text="Breakfast"
         android:layout_below="@+id/prompt"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="sendMessageBreakfast"/>
 
     <Button
         android:id="@+id/lunch"
@@ -51,7 +52,8 @@
         android:text="Lunch"
         android:layout_below="@+id/breakfast"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="sendMessageLunch"/>/>
 
     <Button
         android:id="@+id/dinner"
@@ -60,7 +62,8 @@
         android:text="Dinner"
         android:layout_below="@+id/lunch"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="sendMessageDinner"/>/>
 
 
 </RelativeLayout>

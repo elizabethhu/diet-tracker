@@ -1,6 +1,5 @@
 package com.inspiringfemgineers.www.diettracker;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,37 +8,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class DayScreen extends AppCompatActivity {
-    private Day day;
-    public final static String EXTRA_MESSAGE = "mealtype";
+public class FoodScreen extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_day_screen);
+        setContentView(R.layout.activity_food_screen);
     }
-    public void sendMessageBreakfast(View view) {
-        Intent intent = new Intent(this, MealScreen.class);
-        int message = 0;
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+    public void addListener(){
+        final Button addfood = (Button) findViewById(R.id.foodbutton);
+        addfood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText entername = (EditText) findViewById(R.id.enterfood);
+                String name = entername.getText().toString();
+                Food food = new Food();
+                EditText displayname = (EditText) findViewById(R.id.displayname);
+                displayname.setText("Hello " + name + "!");
+            }
+        });
     }
-    public void sendMessageLunch(View view) {
-        Intent intent = new Intent(this, MealScreen.class);
-        int message = 1;
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }
-    public void sendMessageDinner(View view) {
-        Intent intent = new Intent(this, MealScreen.class);
-        int message = 2;
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_day_screen, menu);
+        getMenuInflater().inflate(R.menu.menu_food_screen, menu);
         return true;
     }
 
