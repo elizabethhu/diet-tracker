@@ -24,6 +24,7 @@
         android:layout_marginTop="-300px"
         android:layout_marginLeft="250px"
         android:text="GO"
+        android:onClick="sendMessage"
         android:background="#90C3D4"
         android:id="@+id/button" />
 </LinearLayout>
