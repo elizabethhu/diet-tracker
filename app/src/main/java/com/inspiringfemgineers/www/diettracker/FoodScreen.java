@@ -1,5 +1,6 @@
 package com.inspiringfemgineers.www.diettracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,20 +15,9 @@ public class FoodScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_screen);
+        Intent intent = getIntent();
     }
-    public void addListener(){
-        final Button addfood = (Button) findViewById(R.id.foodbutton);
-        addfood.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText entername = (EditText) findViewById(R.id.enterfood);
-                String name = entername.getText().toString();
-                Food food = new Food();
-                EditText displayname = (EditText) findViewById(R.id.displayname);
-                displayname.setText("Hello " + name + "!");
-            }
-        });
-    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -19,6 +19,10 @@ public class MealScreen extends AppCompatActivity {
         int message = intent.getIntExtra(DayScreen.EXTRA_MESSAGE, 0);
         //message is which meal 0: breakfast,
     }
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, FoodScreen.class);
+        startActivity(intent);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
